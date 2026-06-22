@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Portfolio - [M]</title>
+  <style>
+    :root {
+  --bg: #70cf99;
+  --text: #9e4f99; 
+  --muted: #4f6a70;
+  --accent: #823bc4;
+  --max: 950px;
+}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+  margin: 0;
+  font-family: "Chakra Petch", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 30%),
+    linear-gradient(180deg, #78e1bc 10%, #8de6e7 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem;
+  text-align: left; /* ajout */
+}
+
+   /* Décalage global du contenu vers la gauche */
+.page {
+  width: min(calc(100% - 2rem), var(--max));
+  margin: 0; /* supprime le margin auto pour ne pas centrer */
+  padding-left: 1rem; /* ajoute un léger padding à gauche */
+}
+
+    header h1 {
+      color: var(--accent);
+      font-family: "Unbounded", sans-serif;
+      font-size: clamp(1.6rem, 5vw, 3rem);
+      line-height: 0.95;
+      max-width: 15ch;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+      text-align: left;
+      margin-top: 0;
+    }
+
+   h2 {
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+  text-align: left;
+  margin-top: 2rem;
+  color: #5a2a82; /* violet foncé */
+}
+
+    p {
+      margin: 0 0 1rem 0;
+      line-height: 1.8;
+      font-size: 1rem;  
+      max-width: 100ch;
+      text-align: left;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    footer {
+      color: var(--#df57c4dd);
+      margin-top: 3rem;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+   .top-link {
+  color: #1e6dff; /* bleu */
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  font-size: 1.20rem;
+  transition: color 0.3s ease;
+}
+
+.top-link:hover {
+  color: #ff8000; /* orange clair */
+  cursor: pointer;
+}
+
+  </style>
+  <p>test</p>

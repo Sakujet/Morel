@@ -1,35 +1,177 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon Portfolio - Morel </title>
-<link rel="stylesheet" href="style.css">
-<style>
-header h1 {
-    color: #f63b3b;
-}
-body {
-    background-color: #a5b7ba;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Portfolio - Morel</title>
+  <style>
+    /*commentaire = "infos perso"*/ 
+    /* Deco: Couleur, Police... */
+    :root {
+      --bg: #a2bfc5;
+      --text: #16333a;
+      --muted: #4f6a70;
+      --accent: #f63b3b;
+      --accent-dark: #d92f2f;
+      --max: 950px;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Chakra Petch", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 30%),
+        linear-gradient(180deg, #a2bfc5 0%, #bdd2d6 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+
+    .page {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0;
+      padding: 0;
+    }
+
+    header h1 {
+      color: var(--accent);
+      font-family: "Unbounded", sans-serif;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 0.95;
+      max-width: 10ch;
+      margin-top: 0;
+      margin-bottom: 0.3rem; /* réduit l’espace sous le titre */
+      letter-spacing: -0.03em;
+      text-align: left;
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-bottom: 1rem; /* réduit l’espace entre le lien et le paragraphe */
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+      font-size: 0.95rem;
+    }
+
+    .top-link:hover {
+      color: var(--accent);
+    }
+
+    h2 {
+      margin: 0 0 1rem 0;
+      font-family: "Unbounded", sans-serif;
+      letter-spacing: -0.03em;
+      text-align: left;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      max-width: 60ch;
+      text-align: left;
+    }
+
+    .about {
+      display: grid;
+      gap: 1.5rem;
+      align-items: start;
+      justify-items: start;
+    }
+
+    .actions-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.4rem;
+      flex-wrap: wrap;
+    }
+
+    .about-image img {
+      width: 220px;
+      max-width: 100%;
+      display: block;
+    }
+
+    .btn {
+      border: none;
+      padding: 0.9rem 1.2rem;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--accent);
+      color: white;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      color: var(--muted); /*couleur des caractères */
+      margin-top: 3rem;  /*taille des caractères */
+      font-size: 0.95rem; /*taille des caractères */
+      text-align: left;  /*alignements des caractères */
+    }
+  </style>
 </head>
 <body>
-<header>
-<h1> Bienvenue sur le site de Jeremy ! </h1>
-<p><a href="index.html">← Retour à l'accueil </a> </p>
-</header>
-<main>
-- Ta présentation >
-<section>
-<h2>À propos de moi </h2>
-<p>Je kiffe lire, jouer aux jeux de société/vidéo mon hardest sur Gd est lost existence (et jai pas de potes  ;-;) </p>
-<button id="mon-bouton-like" class="btn">❤️ J'aime (0) </button>
-</section>
-</main>
-<footer>
-<p>© 2026 - Morel | Fait en copiant le guide </p>
-</footer>
+  <div class="page">
+
+    <header>
+      <h1>Bienvenue sur le site de Jérémy !</h1>
+      <a class="top-link" href="index.html">← Emplois du temps</a>
+    </header>
+
+    <main>
+      <section class="about">
+        <div>
+          <h2>À propos de moi</h2>
+          <p>Je kiffe lire, jouer aux jeux de société et aux jeux vidéo.
+            Mon hardest sur GD est Lost Existence un <strong>extreme demon</strong> (la difficulté la + dure du jeu)</p>
+
+          <div class="actions-row">
+            <button id="mon-bouton-like" class="btn" type="button">💔 J'aime pas (0)</button>
+            <div class="about-image">
+              <img src="lost-existence.jpg" alt="Image du niveau Lost Existence">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 - Morel | (aussi) fait avec le guide</p>
+    </footer>
+
+  </div>
+  <script>
+    let nbLikes = 0;
+    const boutonLike = document.getElementById("mon-bouton-like");
+
+    if (boutonLike) {
+      boutonLike.addEventListener("click", () => {
+        nbLikes++;
+
+        if (nbLikes >= 5) {
+          window.location.href = "confirmation.html";
+        } else {
+          boutonLike.textContent = "💔 J'aime pas (" + nbLikes + ")";
+        }
+      });
+    }
+  </script>
 </body>
-<script src="script.js"></script>
 </html>

@@ -1,21 +1,147 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon Portfolio - Morel </title>
-<link rel="stylesheet" href="style.css">
-<style>
-header h1 {
-    color: #f63b3b;
-}
-body {
-    background-color: #a5b7ba;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Portfolio - Morel</title>  
+  <style>
+    :root {
+      --bg: #a2bfc5;
+      --text: #f64b3b;
+      --muted: #4f6a70;
+      --accent: #f6483b;
+      --accent-dark: #d9322f;
+      --max: 950px;
+      --link-color: #f84200a2; /* Couleur personnalisée pour les liens à droite */
+      --link-hover-color: #1732aa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Chakra Petch", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 30%),
+        linear-gradient(180deg, #a2bfc5 0%, #bdd2d6 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+
+    .page {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0;
+      padding: 0;
+    }
+
+    header h1 {
+      color: var(--accent);
+      font-family: "Unbounded", sans-serif;
+      font-size: clamp(1.6rem, 5vw, 3rem);
+      line-height: 0.95;
+      max-width: 15ch; /* nb max de caractères avant retour à la ligne */
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    h2 {
+      font-family: "Unbounded", sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+      text-align: left;
+      margin-top: 2rem;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.8;
+      font-size: 1rem;
+      max-width: 60ch;
+      text-align: left;
+    }
+
+    a {
+      color: var(--muted);
+      text-decoration: underline;
+      font-size: 1rem;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    /* Nouveau style pour le conteneur image + lien */
+    .about-image {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: flex-start;
+    }
+
+    .about-image img {
+      width: 550px;
+      max-width: 100%;
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Style pour le lien à droite de l'image */
+    .about-image a.details-link {
+      color: var(--link-color);
+      font-weight: 600;
+      text-decoration: underline;
+      white-space: nowrap;
+      transition: color 0.3s ease;
+    }
+
+    .about-image a.details-link:hover {
+      color: var(--link-hover-color);
+      text-decoration: underline;
+    }
+
+    footer {
+      color: var(--muted);
+      margin-top: 3rem;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-<header>
-<h1> Bienvenue sur le site de Jeremy ! </h1>
-<p><a href="jeremy.html">portofolio</a> </p>
-</header>
+  <div class="page">
+    <header>
+      <h1>Tout ce que j'ai fait pendant mon stage.</h1>
+      <p><a href="jeremy.html">À propos de moi</a></p>
+    </header>
+
+    <main>
+      <h2>Emploie du temps de la première semaine :</h2>
+      <div class="about-image">
+        <img src="Emploie1.jpg" alt="1ère semaine" width="800" style="height:auto;" />
+        <a href="Emploie1jours.html" class="details-link"> -> Détails des journés de la 1ère semaine</a>
+      </div>
+
+      <h2>Emploie du temps de la 2ème semaine :</h2>
+      <div class="about-image">
+        <img src="emploie2.jpg" alt="2ème semaine" width="800" style="height:auto;" />
+        <a href="emploie2jours.html" class="details-link"> -> Détails des journés de la 2ème semaine</a>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 - Morel | Fait avec le guide</p>
+    </footer>
+  </div>
+</body>
+</html>
