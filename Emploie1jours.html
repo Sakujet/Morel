@@ -5,151 +5,220 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mon Portfolio - [M]</title>
   <style>
-    :root {
-  --bg: #70cf99;
-  --text: #9e4f99; 
-  --muted: #4f6a70;
-  --accent: #823bc4;
-  --max: 950px;
-}
+  :root {
+    --bg: #70cf99;
+    --text: #9e4f99; 
+    --muted: #4f6a70;
+    --accent: #823bc4;
+    --max: 1100px;
+  }
 
-    * {
-      box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Chakra Petch", sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 20%),
+      linear-gradient(180deg, #c19be3 10%, #c78dd1 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start; /* alignement horizontal à gauche */
+    align-items: flex-end;       /* alignement vertical en bas */
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .page {
+    width: min(calc(100% - 2rem), var(--max));
+    margin: 0; 
+    padding-left: 1rem; 
+  }
+
+  header h1 {
+    color: var(--accent);
+    font-family: "Unbounded", sans-serif;
+    font-size: clamp(1.6rem, 5vw, 3rem);
+    line-height: 0.95;
+    max-width: 15ch;
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-family: "Unbounded", sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+    text-align: left;
+    margin-top: 2rem;
+    color: #5a2a82;
+  }
+
+  p {
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+    font-size: 1.08rem;  
+    max-width: 70ch;
+    text-align: left;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  footer {
+    color: #bc38b1dd;
+    margin-top: 3rem;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .top-link {
+    color: #1e6dff; /* bleu */
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    font-size: 1.20rem;
+    transition: color 0.3s ease;
+  }
+
+  .top-link:hover {
+    color: #ff8000;
+    cursor: pointer;
+  }
+
+  .jour {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .jour-texte {
+    max-width: 70%;
+  }
+
+  .jour figure {
+    margin: 0;
+    margin-left: auto;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .jour img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .jour figcaption {
+    font-size: 0.85rem;
+    color: #5a2a82;
+    margin-top: 0.3rem;
+    font-style: italic;
+  }
+
+  @media (max-width: 700px) {
+    .jour {
+      flex-direction: column;
+      align-items: flex-start;
     }
-
-    body {
-  margin: 0;
-  font-family: "Chakra Petch", sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 30%),
-    linear-gradient(180deg, #78e1bc 10%, #8de6e7 100%);
-  min-height: 100vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 1rem;
-  text-align: left; /* ajout */
-}
-
-   /* Décalage global du contenu vers la gauche */
-.page {
-  width: min(calc(100% - 2rem), var(--max));
-  margin: 0; /* supprime le margin auto pour ne pas centrer */
-  padding-left: 1rem; /* ajoute un léger padding à gauche */
-}
-
-    header h1 {
-      color: var(--accent);
-      font-family: "Unbounded", sans-serif;
-      font-size: clamp(1.6rem, 5vw, 3rem);
-      line-height: 0.95;
-      max-width: 15ch;
-      margin-bottom: 1rem;
-      letter-spacing: -0.03em;
-      text-align: left;
-      margin-top: 0;
+    .jour-texte {
+      max-width: 100%;
     }
-
-   h2 {
-  font-family: "Unbounded", sans-serif;
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  margin-bottom: 1rem;
-  letter-spacing: -0.03em;
-  text-align: left;
-  margin-top: 2rem;
-  color: #5a2a82; /* violet foncé */
-}
-
-    p {
-      margin: 0 0 1rem 0;
-      line-height: 1.8;
-      font-size: 1rem;  
-      max-width: 100ch;
-      text-align: left;
+    .jour figure {
+      margin-left: 0;
+      margin-top: 0.5rem;
     }
-
-    strong {
-      font-weight: 700;
-    }
-
-    footer {
-      color: var(--#df57c4dd);
-      margin-top: 3rem;
-      font-size: 0.95rem;
-      text-align: left;
-    }
-   .top-link {
-  color: #1e6dff; /* bleu */
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
-  font-size: 1.20rem;
-  transition: color 0.3s ease;
-}
-
-.top-link:hover {
-  color: #ff8000; /* orange clair */
-  cursor: pointer;
-}
-
+  }
   </style>
 </head>
 <body>
   <div class="page">
+    <a class="top-link" href="index.html">←Infos entreprise... </a>
     <header>
       <h1>1ère semaine du stage :</h1>
     </header>
-
     <main>
       <section>
         <h2>1er jour :</h2>
-        <p><strong>Le matin :</strong><br />
-          Les personnes qui s'occupent de nous se sont présentées, nous avons fait un jeu pour "détendre l'atmosphère" et pour mieux nous connaître. Ensuite, nous avons visité l'école et installé le reste des applications nécessaires pour le stage.
-        </p>
-        <p><strong>L'après-midi :</strong><br />
-          Nous avons commencé notre portfolio et créé notre compte Github (sans aucun souci...).
-        </p>
-
+        <div class="jour">
+          <div class="jour-texte">
+            <p><strong>Le matin :</strong> Présentation du campus avec un jeu pour apprendre à se connaître + vérification des PC</p>
+            <p><strong>L'après-midi :</strong> Nous avons commencé notre portfolio et créé notre compte Github (sans aucun souci...)</p>
+          </div>
+          <figure>
+            <img src="campus.jpg" alt="Image du 1er jour" width="400" height="250" />
+            <figcaption>Image du campus</figcaption>
+          </figure>
+        </div>
         <h2>2ème jour :</h2>
-        <p><strong>Le matin :</strong><br />
-          Nous avons continué notre portfolio puis nous avons eu une conférence sur la cybersécurité avec un faux site internet.
-        </p>
-        <p><strong>L'après-midi :</strong><br />
-          Nous avons fait un wordlguess (pareil que geoguesser) pour nous montrer qu'avec une simple image, on peut recueillir de nombreuses informations. Puis après le wordlguess, nous avons fait des énigmes qui utilisaient de nombreuses choses que l'on pouvait retrouver sur internet (déchiffrer des messages codés, retrouver une marque avec un bout d'image...).
-        </p>
+        <div class="jour">
+          <div class="jour-texte">
+            <p><strong>Le matin :</strong> Conférence sur la cybersécurité sur les sites internet + PF</p>
+            <p><strong>L'après-midi :</strong> Wordlguess (=geoguessr) -> photo = beaucoup d'informatio,. + énigme à résoudre (Osint Ctf)</p>
+          </div>
+          <figure>
+            <img src="Ctfenigme.png" alt="Image du 2ème jour" width="400" height="250" />
+            <figcaption>Ex d'énigme à résoudre</figcaption>
+          </figure>
+        </div>
 
         <h2>3ème jour :</h2>
-        <p><strong>Le matin :</strong><br />
-          Nous avons fait du "poké poireau" (un jeu où le but est de coder l'IA de notre poireau pour le rendre plus fort). Puis nous avons eu une conférence sur l'IA et ses conséquences d'aujourd'hui (plus on utilise l'IA, plus on s'abrutit / L'IA transforme, elle ne remplace pas...).
-        </p>
-        <p><strong>L'après-midi :</strong><br />
-          Nous avons créé un code Python pour déchiffrer un code César puis nous avons utilisé Python Turtle pour dessiner notre "maison de stage" (champignon pour notre groupe).
-        </p>
+        <div class="jour">
+          <div class="jour-texte">
+            <p><strong>Le matin :</strong> Poké poireau (codage d'IA ) + conférence sur L'IA, "la tranformation de l'IA"</p>
+            <p><strong>L'après-midi :</strong> Utilisation de Python (code césar) + Python turtle (dessin de notre maison champi de mario)</p>
+          </div>
+          <figure>
+            <img src="LkWars.png" alt="Image du 3ème jour" width="300" height="200" />
+            <figcaption>Image de Leek wars</figcaption>
+          </figure>
+        </div>
 
         <h2>4ème jour :</h2>
-        <p><strong>Le matin :</strong><br />
-          Nous avons utilisé des LEGO pour créer des canards pour nous montrer qu'avec seulement quelques briques, il y a des milliers de possibilités. Puis nous avons eu une conférence sur l'apprentissage (apprendre à apprendre).
-        </p>
-        <p><strong>L'après-midi :</strong><br />
-          Nous avons utilisé Arduino où le but était de recréer le jeu connu "Simon" avec des LED.
-        </p>
+        <div class="jour">
+          <div class="jour-texte">
+            <p><strong>Le matin :</strong> Création de LEGO canard (on peu créer beaucoup de choses avec peu de choses (W citation)) + conférence apprendre à apprenndre</p>
+            <p><strong>L'après-midi :</strong> Utilisation D'arduino pour créer le jeu "Simon"</p>
+          </div>
+          <figure>
+            <img src="Simon gm1.png" alt="Image du 4ème jour" width="300" height="200" />
+            <figcaption>Jeu "Simon"</figcaption>
+          </figure>
+        </div>
 
         <h2>5ème jour :</h2>
-        <p><strong>Le matin :</strong><br />
-          Aujourd'hui, nous étions en distanciel, nous avons eu une conférence interactive sur l'IA (les erreurs qu'elle peut faire, ce n'est qu'un outil, pas un cerveau...).
-        </p>
-        <p><strong>L'après-midi :</strong><br />
-          Nous avons continué notre portfolio avec l'aide d'élèves.
-        </p>
+        <div class="jour">
+          <div class="jour-texte">
+            <p><strong>Le matin :</strong> Distanciel -> Conférence sur l' IA générative</p>
+            <p><strong>L'après-midi :</strong> Distanciel -> PF</p>
+          </div>
+          <figure>
+            <img src="sitepicture.PNG" alt="Image du 5ème jour" width="300" height="200" />
+            <figcaption>Site créer par l'IA</figcaption>
+          </figure>
+        </div>
+        <h2>La 2ème semaines est ressemblante a la 1ère :</h2>
+        <p>Beaucoup de conférence (notamment IA et Métier) </p>
+        <img src="pls.png" width="470" height="290"">
+        <p>Travail sur notre portfolio (site internet)</p>
+        <p>Puis connaissance de Java + Python</p>
+        <img src="p5js.png" width="width="440" height="310">
       </section>
     </main>
-
     <footer>
-           <p><u><strong>Fin de la 1ère semaine.</strong></u></p>
+      <p><u><strong>Fin du stage.</strong></u></p>
+      <div class="top-link">
+      <a class="top-link" href="fin.html">← Bilan stage</a>
+    </div>
     </footer>
-    <div class=".top-link">
-            <a class="top-link" href="index.html">← Emplois du temps</a>
-        </div>
   </div>
 </body>
 </html>

@@ -22,21 +22,20 @@
   font-family: "Chakra Petch", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 30%),
-    linear-gradient(180deg, #78e1bc 10%, #8de6e7 100%);
+    radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 20%),
+    linear-gradient(180deg, #b078e1 10%, #da8de7 100%);
   min-height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   padding: 1rem;
-  text-align: left; /* ajout */
+  text-align: left;
 }
 
-   /* Décalage global du contenu vers la gauche */
 .page {
   width: min(calc(100% - 2rem), var(--max));
-  margin: 0; /* supprime le margin auto pour ne pas centrer */
-  padding-left: 1rem; /* ajoute un léger padding à gauche */
+  margin: 0; 
+  padding-left: 1rem;
 }
 
     header h1 {
@@ -93,4 +92,29 @@
 }
 
   </style>
-  <p>test</p>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>2éme semaine du stage :</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>La 2ème semaines est ressemblante a la 1ère :</h2>
+        <p>Beaucoup de conférence (notamment IA et Métier) </p>
+        <img src="pls.png" width="470" height="290"">
+        <p>Travail sur notre portfolio (site internet)</p>
+        <p>Puis connaissance de Java + Python</p>
+        <img src="p5js.png" width="width="440" height="310">
+        </section>
+        </main>
+      <footer>
+      <p><u><strong>Fin de la 2ème semaine.</strong></u></p>
+    </footer>
+    <div class="top-link">
+      <a class="top-link" href="index.html">← Emplois du temps</a>
+    </div>
+  </div>
+</body>
+</html>
