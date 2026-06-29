@@ -76,45 +76,19 @@
       color: var(--accent);
     }
 
-    /* Nouveau style pour le conteneur image + lien */
-    .about-image {
-      margin-top: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      justify-content: flex-start;
-    }
+     .top-link {
+    color: #ff8000; 
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    font-size: 1.20rem;
+    transition: color 0.3s ease;
+  }
 
-    .about-image img {
-      width: 550px;
-      max-width: 100%;
-      display: block;
-      border-radius: 4px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    /* Style pour le lien à droite de l'image */
-    .about-image a.details-link {
-      color: var(--link-color);
-      font-weight: 600;
-      text-decoration: underline;
-      white-space: nowrap;
-      transition: color 0.3s ease;
-    }
-
-    .about-image a.details-link:hover {
-      color: var(--link-hover-color);
-      text-decoration: underline;
-    }
-
-    footer {
-      color: var(--muted);
-      margin-top: 3rem;
-      font-size: 0.95rem;
-      text-align: left;
-    }
+  .top-link:hover {
+    color: #2645f4;
+    cursor: pointer;
+  }
   </style>
-</head>
 <body>
   <div class="page">
     <header>
@@ -127,5 +101,21 @@
     <h2>Compliment et Critiques</h2>
     <p>-Façon d'apprendre original est efficace</p>
      <p>-organisation parfois mal géré</p>
-    </div>
 </body>
+<footer>
+  <style>
+    h4 {
+      color: rgb(141, 173, 225);
+    }
+  </style> 
+  <h4>
+  <p>a </p>
+   <p> a</p>
+    <p>a </p>
+     <p> a</p>
+      </h4>
+  <a class="top-link" href="index.html">← Présentation</a>
+</footer>
+    </div>
+</head>
+</html>
